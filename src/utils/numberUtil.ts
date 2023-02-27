@@ -1,7 +1,6 @@
 /**
  * the input is a numeric value
- * @static
- * @since 1.0.0
+ * @since v1.0.0
  * @category Number
  * @param {any} value
  * @returns {boolean} result
@@ -18,8 +17,7 @@ export function isNumber(value: any): boolean {
 
 /**
  * Set input if value is number then set in instead of set in default value
- * @static
- * @since 1.0.0
+ * @since v1.0.0
  * @category Number
  * @param {T} value
  * @param {T} defaultValue
@@ -31,8 +29,17 @@ export function isNumber(value: any): boolean {
  *  numberValue
  * )
  * => 1
+ *
+ * const emptyValue = setNumberValue('')
+ * console.log(
+ *  numberValue
+ * )
+ * => undefined
  */
-export function setNumberValue<T>(value: T, defaultValue?: number): number | undefined  {
+export function setNumberValue<T>(
+  value: T,
+  defaultValue?: number
+): number | undefined {
   if (isNumber(value)) {
     return Number(value)
   }
