@@ -1,7 +1,7 @@
-import { getVersion } from '@/index'
+import appTools from '@/index'
 
 describe('getVersion', () => {
   it('should return correct greeting', () => {
-    expect(getVersion()).toBe('v1.0.3')
+    expect(appTools.getVersion()).toBe('v1.0.3')
   })
 })
