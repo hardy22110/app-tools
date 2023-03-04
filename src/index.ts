@@ -11,8 +11,12 @@ import * as arrayUtil from './utils/arrayUtil'
  * )
  * => v1.0.0
  */
-export function getVersion(): string {
+function getVersion(): string {
   return `v1.0.3`
 }
 
-export { numberUtil, arrayUtil }
+export default {
+  getVersion,
+  numberUtil,
+  arrayUtil,
+}

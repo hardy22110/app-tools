@@ -1,4 +1,4 @@
-import { findTargetObject, filterObjectList } from '@/utils/arrayUtil'
+import { findTargetObject, filterObjectArray } from '@/utils/arrayUtil'
 
 describe('findTargetObject', () => {
   const list = [
@@ -41,7 +41,7 @@ describe('findTargetObject', () => {
   })
 })
 
-describe('filterObjectList', () => {
+describe('filterObjectArray', () => {
   const objectList = [
     {
       a: 1,
@@ -60,44 +60,44 @@ describe('filterObjectList', () => {
     },
   ]
 
-  it('call filterObjectList(objectList, { a: 1 }) returns [objectList[0]]', () => {
-    expect(filterObjectList(objectList, { a: 1 })).toStrictEqual([
+  it('call filterObjectArray(objectList, { a: 1 }) returns [objectList[0]]', () => {
+    expect(filterObjectArray(objectList, { a: 1 })).toStrictEqual([
       objectList[0],
     ])
   })
 
-  it('call filterObjectList(objectList, { a: 1, b: 1 }) returns [objectList[0]]', () => {
-    expect(filterObjectList(objectList, { a: 1, b: 1 })).toStrictEqual([
+  it('call filterObjectArray(objectList, { a: 1, b: 1 }) returns [objectList[0]]', () => {
+    expect(filterObjectArray(objectList, { a: 1, b: 1 })).toStrictEqual([
       objectList[0],
     ])
   })
 
-  it('call filterObjectList(objectList, { flag: true }) returns [objectList[0], objectList[1]]', () => {
-    expect(filterObjectList(objectList, { flag: true })).toStrictEqual([
+  it('call filterObjectArray(objectList, { flag: true }) returns [objectList[0], objectList[1]]', () => {
+    expect(filterObjectArray(objectList, { flag: true })).toStrictEqual([
       objectList[0],
       objectList[1],
     ])
   })
 
-  it('call filterObjectList(objectList, { a: 1, c: 1 }) returns []', () => {
-    expect(filterObjectList(objectList, { a: 1, c: 1 })).toStrictEqual([])
+  it('call filterObjectArray(objectList, { a: 1, c: 1 }) returns []', () => {
+    expect(filterObjectArray(objectList, { a: 1, c: 1 })).toStrictEqual([])
   })
 
-  it('call filterObjectList(objectList, { a: 3 }) returns []', () => {
-    expect(filterObjectList(objectList, { a: 3 })).toStrictEqual([
+  it('call filterObjectArray(objectList, { a: 3 }) returns []', () => {
+    expect(filterObjectArray(objectList, { a: 3 })).toStrictEqual([
       objectList[2],
     ])
   })
 
-  it('call filterObjectList(objectList, undefined) returns []', () => {
-    expect(filterObjectList(objectList, undefined as any)).toStrictEqual([])
+  it('call filterObjectArray(objectList, undefined) returns []', () => {
+    expect(filterObjectArray(objectList, undefined as any)).toStrictEqual([])
   })
 
-  it(`call filterObjectList(objectList, { a: '1' }) returns []`, () => {
-    expect(filterObjectList(objectList, { a: '1' })).toStrictEqual([])
+  it(`call filterObjectArray(objectList, { a: '1' }) returns []`, () => {
+    expect(filterObjectArray(objectList, { a: '1' })).toStrictEqual([])
   })
 
-  it(`call filterObjectList(objectList, {}) returns []`, () => {
-    expect(filterObjectList(objectList, {})).toStrictEqual(objectList)
+  it(`call filterObjectArray(objectList, {}) returns []`, () => {
+    expect(filterObjectArray(objectList, {})).toStrictEqual(objectList)
   })
 })

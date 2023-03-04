@@ -42,11 +42,11 @@ export function findTargetObject(
  *
  * const list = [{ ID: 1, label: 'label1' }, { ID: 2, label: 'label2' }]
  * console.log(
- *  filterObjectList(list, { ID: 1 })
+ *  filterObjectArray(list, { ID: 1 })
  * )
  * => [{ ID: 1, label: 'label1' }]
  */
-export function filterObjectList(
+export function filterObjectArray(
   list: Record<string, any>[],
   object: Record<string, any>
   // TODO other conditions
@@ -60,3 +60,5 @@ export function filterObjectList(
     return []
   }
 }
+
+// export function setObjectArray() {}
