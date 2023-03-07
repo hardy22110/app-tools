@@ -61,4 +61,6 @@ export function filterObjectArray(
   }
 }
 
-// export function setObjectArray() {}
+export function setObjectArray(originList: Record<string, any>[]) {
+
+}

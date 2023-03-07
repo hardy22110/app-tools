@@ -11,9 +11,9 @@ npm install app-tools
 ## Usage
 
 ```typescript
-import appTools from 'app-tools'
+import { getVersion } from 'app-tools'
 
-console.log('app-tools version ', appTools.getVersion())
+console.log('app-tools version ', getVersion())
 ```
 
 ## documentation
