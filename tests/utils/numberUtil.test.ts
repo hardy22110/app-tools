@@ -1,4 +1,4 @@
-import { isNumber, setNumberValue } from '@/utils/numberUtil'
+import { isNumber, setNumberValue } from '@/utils/numberUtils'
 
 describe('isNumber', () => {
 
