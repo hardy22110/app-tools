@@ -1,5 +1,5 @@
 /**
- * the input is a numeric value
+ * The input is a numeric value
  * @since v1.0.0
  * @category Number
  * @param {any} value
