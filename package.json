@@ -11,7 +11,7 @@
     "build": "rollup -c",
     "test": "jest",
     "docs": "typedoc --tsconfig tsconfig.json --out docs --entryPoints src/index.ts",
-    "lint": "eslint --ext .ts . && prettier --write \"src/**/*.ts\""
+    "lint": "eslint --ext .ts . && prettier --write \"./**/*.ts\""
   },
   "repository": {
     "type": "git",

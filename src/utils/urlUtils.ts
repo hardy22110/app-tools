@@ -1,6 +1,8 @@
 import { isString } from './stringUtils'
 /**
- * Get the parameters and values from the URL and return them as a parameter object
+ * Get the parameters and values from the URL and return them as a parameter object.
+ * returns empty object if unresolvable path.
+ * this parameter is ignored if the parameter cannot be parsed.
  * @since v1.0.4
  * @category URL
  * @param {string} url - URL
@@ -9,22 +11,24 @@ import { isString } from './stringUtils'
  *
  * const url = 'http://localhost:8080?name=value'
  * console.log(
- *  getURLParameter(url)
+ *  getURLParams(url)
  * )
  * => { name: 'value' }
  */
-export function getURLParameter(url: string): Record<string, string> {
-  const parameter: Record<string, string> = {}
+export function getURLParams(url: string): Record<string, string> {
+  let parameter: Record<string, string> = {}
   try {
     if (!isString(url) || url.trim().length === 0) {
       return {}
     }
     const targetURL = new URL(url)
     for (const [key, value] of targetURL.searchParams.entries()) {
-      parameter[key] = value
+      if (isString(key) && key.length > 0) {
+        parameter[key] = value
+      }
     }
-  } catch (error) {
-    // TODO catch error
+  } catch {
+    parameter = {}
   }
   return parameter
 }
@@ -40,12 +44,12 @@ export function getURLParameter(url: string): Record<string, string> {
  *
  * const url = 'http://localhost:8080?name=value'
  * console.log(
- *  getURLParameterValue(url, 'test')
+ *  getURLParamValue(url, 'name')
  * )
  * => 'value'
  */
-export function getURLParameterValue(url: string, key: string): string {
-  const parameter = getURLParameter(url)
+export function getURLParamValue(url: string, key: string): string {
+  const parameter = getURLParams(url)
   if (parameter[key] && parameter[key].length > 0) {
     return parameter[key]
   }
