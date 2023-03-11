@@ -93,7 +93,8 @@ describe('getURLParamValue', () => {
   })
 
   test('getURLParamValue returns correct value for parameter with reserved characters', () => {
-    const url = 'https://example.com/?reserved=%2F%3F%3A%40%26%3D%2B%24%2C%3B%23%5B%5D%22%3C%3E%7B%7D%7C%5C%5E%60%20'
+    const url =
+      'https://example.com/?reserved=%2F%3F%3A%40%26%3D%2B%24%2C%3B%23%5B%5D%22%3C%3E%7B%7D%7C%5C%5E%60%20'
     const key = 'reserved'
     const result = getURLParamValue(url, key)
     expect(result).toBe('/?:@&=+$,;#[]"<>{}|\\^` ')
