@@ -1,4 +1,4 @@
-import { isString, truncate } from '@/utils/stringUtils'
+import { isString, truncate, setStringValue } from '@/utils/stringUtils'
 
 describe('isString', () => {
   it('should return true if value is a string', () => {
@@ -37,5 +37,26 @@ describe('truncate', () => {
   it('returns original input when input length is equal to maxLength', () => {
     expect(truncate('hello', 5)).toEqual('hello')
     expect(truncate('你好', 2)).toEqual('你好')
+  })
+})
+
+describe('setStringValue', () => {
+  test('should return converted string when value is string', () => {
+    const result = setStringValue('test', 'default')
+    expect(result).toEqual('test')
+  })
+  test('should return default value when value is not string', () => {
+    const result = setStringValue(123, 'default')
+    expect(result).toEqual('default')
+  })
+  test('should return default value when value is undefined', () => {
+    const result = setStringValue(undefined, 'default')
+    expect(result).toEqual('default')
+  })
+  test('should return defaultStringValue if value is number', () => {
+    expect(setStringValue(42, 'default')).toBe('default')
+  })
+  test('should return undefined when defaultStringValue is undefined', () => {
+    expect(setStringValue(42)).toBeUndefined()
   })
 })

@@ -35,3 +35,35 @@ export function truncate<T>(str: T, maxLength: number): T | string {
   }
   return str.slice(0, maxLength)
 }
+
+
+/**
+ * Set input if value is string then set in instead of set in default value
+ * @since v1.0.4
+ * @category String
+ * @param value
+ * @param defaultValue
+ * @returns value or defaultValue
+ * @example
+ *
+* const stringValue = setStringValue('example', '')
+* console.log(
+*  numberValue
+* )
+* => 'example'
+*
+* const nullValue = setStringValue(null, '')
+* console.log(
+*  numberValue
+* )
+* => ''
+*/
+export function setStringValue<T>(
+ value: T,
+ defaultValue?: string
+): T | string | undefined {
+ if (isString(value)) {
+   return value
+ }
+ return defaultValue
+}
