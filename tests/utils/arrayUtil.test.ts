@@ -4,12 +4,12 @@ describe('findTargetObject', () => {
   const list = [
     {
       a: 1,
-      b: 1,
+      b: 1
     },
     {
       a: 2,
-      b: 2,
-    },
+      b: 2
+    }
   ]
 
   it('call findTargetObject(list, { a: 1 }) returns list[0]', () => {
@@ -46,36 +46,36 @@ describe('filterObjectArray', () => {
     {
       a: 1,
       b: 1,
-      flag: true,
+      flag: true
     },
     {
       a: 2,
       b: 2,
-      flag: true,
+      flag: true
     },
     {
       a: 3,
       b: 3,
-      flag: false,
-    },
+      flag: false
+    }
   ]
 
   it('call filterObjectArray(objectList, { a: 1 }) returns [objectList[0]]', () => {
     expect(filterObjectArray(objectList, { a: 1 })).toStrictEqual([
-      objectList[0],
+      objectList[0]
     ])
   })
 
   it('call filterObjectArray(objectList, { a: 1, b: 1 }) returns [objectList[0]]', () => {
     expect(filterObjectArray(objectList, { a: 1, b: 1 })).toStrictEqual([
-      objectList[0],
+      objectList[0]
     ])
   })
 
   it('call filterObjectArray(objectList, { flag: true }) returns [objectList[0], objectList[1]]', () => {
     expect(filterObjectArray(objectList, { flag: true })).toStrictEqual([
       objectList[0],
-      objectList[1],
+      objectList[1]
     ])
   })
 
@@ -85,7 +85,7 @@ describe('filterObjectArray', () => {
 
   it('call filterObjectArray(objectList, { a: 3 }) returns []', () => {
     expect(filterObjectArray(objectList, { a: 3 })).toStrictEqual([
-      objectList[2],
+      objectList[2]
     ])
   })
 

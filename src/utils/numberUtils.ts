@@ -1,5 +1,5 @@
 /**
- * the input is a numeric value
+ * The input is a numeric value
  * @since v1.0.0
  * @category Number
  * @param {any} value
@@ -16,7 +16,7 @@ export function isNumber(value: any): boolean {
 }
 
 /**
- * Set input if value is number then set in instead of set in default value
+ * Set the input if the value converts a number to a number, if not then set the default value
  * @since v1.0.0
  * @category Number
  * @param {T} value

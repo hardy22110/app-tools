@@ -60,7 +60,3 @@ export function filterObjectArray(
     return []
   }
 }
-
-export function setObjectArray(originList: Record<string, any>[]) {
-
-}
