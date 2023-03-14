@@ -2,7 +2,9 @@
   "name": "app-tools",
   "version": "1.0.3",
   "description": "This is a tool for JavaScript development",
-  "main": "dist/index.js",
+  "main": "dist/index.common.js",
+  "module": "dist/index.esm.js",
+  "umd:main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist/**/*"
@@ -36,6 +38,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
     "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
